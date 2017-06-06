@@ -7,12 +7,16 @@ var generateNumber = function() {
 
 module.exports = {
   getQuote: function(cb){
-    return request(quoteUrl, function(e, r, b) {
-      if(e) {
-        cb(error);
-      }
-      cb(null, JSON.parse(b.replace(/\\/g, "")));
-    });
+    try {
+      return request(quoteUrl, function(e, r, b) {
+        if(e) {
+          cb(error);
+        }
+        cb(null, JSON.parse(b.replace(/\\/g, "")));
+      });
+    } catch (e) {
+      cb('ballz');
+    }
   },
 
   getImageUrl: function() {

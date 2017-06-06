@@ -1,5 +1,5 @@
 body {
-  padding: 50px;
+  /*padding: 50px;*/
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
@@ -12,7 +12,11 @@ a {
 }
 
 img {
-  max-width: 75%;
+  max-width: 60%;
+}
+
+img.small {
+  max-width: 25%;
 }
 
 .flex-center {

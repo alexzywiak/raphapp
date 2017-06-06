@@ -1,9 +1,11 @@
 <div class="container">
   <div class="row">
       <div class="col-md-8 col-md-offset-2">
-        <h2 class="text-center">RaphApp</h2>
+        <div class="page-header">
+          <h3 class='text-center'>Rraph<b>App</b> <small>{{subtitle}}</small></h3>
+        </div>
         <div class="flex-center">
-          <img class="img-rounded" src={{hotness}} alt="">
+          <img class="img-rounded {{size}}" src={{hotness}} alt="">
         </div>
         <blockquote class='text-center'>
           <p class="cursive-font">{{quote}}</p>
@@ -11,6 +13,11 @@
         </blockquote>
         <a href="/">
           <button type="button" class="btn btn-success btn-lg btn-block">More Raph</button>
+        </a>
+        <a href="/lessraph">
+          <button type="button" class="btn btn-link">
+            Less Raph
+          </button>
         </a>
       </div>
   </div>
