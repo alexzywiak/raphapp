@@ -5,7 +5,7 @@ var chicken = require('../chicken.js');
 router.get('/', function(req, res, next) {
   chicken.getQuote(function(e, r) {
     chicken.handleErrors(e, () => {
-      res.render('hisraphness', {author: "Raph", quote: r, hotness: chicken.getImageUrl()});
+      res.render('hisraphness', {author: "Raph", quote: r.quoteText, hotness: chicken.getImageUrl()});
     }, (e) => {
       res.render('error', {message: 'Refresh your steez, bro.'});
     });
