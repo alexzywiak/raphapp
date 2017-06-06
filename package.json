@@ -1,6 +1,9 @@
 {
   "name": "raphapp",
-  "version": "0.0.0",
+  "version": "1.0.0",
+  "engines": {
+    "node": "6.2.1"
+  },
   "private": true,
   "scripts": {
     "start": "node ./bin/www"
