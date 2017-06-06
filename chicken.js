@@ -2,7 +2,7 @@ var request = require('request');
 var quoteUrl = 'https://api.forismatic.com/api/1.0/\?method\=getQuote\&lang\=en\&format\=json';
 
 var generateNumber = function() {
-  return Math.floor(Math.random() * 22);
+  return Math.floor(Math.random() * 21);
 }
 
 module.exports = {
