@@ -4,10 +4,11 @@ var chicken = require('../chicken.js');
 
 router.get('/', function(req, res, next) {
   chicken.getQuote(function(e, r) {
-    if (e) {
-      res.render('error', {message: 'Refresh, bro'})
-    }
-    res.render('chicken', { quote: r.quoteText, author: 'Raph', hotnessIndex: chicken.generateNumber() });
+    chicken.handleErrors(e, () => {
+      res.render('hisraphness', {author: "Raph", quote: r, hotness: chicken.getImageUrl()});
+    }, (e) => {
+      res.render('error', {message: 'Refresh your steez, bro.'});
+    });
   });
 });
 
