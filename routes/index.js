@@ -3,7 +3,7 @@ var router = express.Router();
 var chicken = require('../chicken.js');
 
 router.get('/', function(req, res, next) {
-  chicken.getQuote(function(e, r) {
+  chicken.getQuoteEng(function(e, r) {
     chicken.handleErrors(e, () => {
       res.render('hisraphness', {
         author: "Raph", 
@@ -27,6 +27,22 @@ router.get('/lessraph', function(req, res, next) {
         size: 'small',
         subtitle: '* Now with 35% less Raph'});
     }, (e) => {
+      res.render('error', {message: 'Refresh your steez, bro.'});
+    });
+  });
+});
+
+router.get('/comrade', function(req, res, next) {
+  chicken.getQuoteRus(function(e, r) {
+    chicken.handleErrors(e, () => {
+      res.render('hisraphnessRussian', {
+        author: "Раф", 
+        quote: r.quoteText, 
+        hotness: chicken.getImageUrlRussian(), 
+        size: '',
+        subtitle: 'Dosvedania'});
+    }, (e) => {
+      console.log(e);
       res.render('error', {message: 'Refresh your steez, bro.'});
     });
   });
